@@ -1,0 +1,3 @@
+[
+       { "title" : "Adaptive Sever Enterprise", "connectionString" : "DSN=SPORT;UID=sa;PWD=secret;DATABASE=pubs2", "dialect" : "ODBC" }
+]

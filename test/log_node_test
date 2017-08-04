@@ -1,0 +1,207 @@
+
+C:\master\asedrv\src\nodejs\node-odbc\test>cd C:\master\asedrv\src\nodejs\node-odbc\test 
+
+C:\master\asedrv\src\nodejs\node-odbc\test>node run-tests.js 
+
+[01;31mWarning[01;0m : there are 2 disabled tests
+
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-bad-connection-string ... [01;31mfail [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-bad-connection-string.js.org ... [01;31mfail [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-binding-connection-loginTimeout ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-binding-connection-timeOut ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-binding-statement-executeSync ... success
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-binding-statement-rebinding ... [ { col1: 'hello', col2: 'world' } ]
+[ { col1: 'goodbye', col2: 'steven' } ]
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-binding-transaction-commit ... [01;31mfail [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-closed ... { message: 'Connection not open.' }
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-connection-object ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-date ... SELECT cast('2017-06-05T13:44:50.989' as datetime) as DT1
+2017-06-05T05:44:50.989Z
+[ { DT1: Mon Jun 05 2017 13:44:50 GMT+0800 (Malay Peninsula Standard Time) } ]
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-describe-column ... connected
+[SAP][ASE ODBC Driver][Adaptive Server Enterprise]Cannot drop the table 'NODE_ODBC_TEST_TABLE', because it doesn't exist in the system catalogs.
+
+tables dropped
+tables created
+[ { TABLE_CAT: 'pubs2',
+    TABLE_SCHEM: 'dbo',
+    TABLE_NAME: 'NODE_ODBC_TEST_TABLE',
+    COLUMN_NAME: 'COLDATETIME',
+    DATA_TYPE: 11,
+    TYPE_NAME: 'datetime',
+    COLUMN_SIZE: 23,
+    BUFFER_LENGTH: 8,
+    DECIMAL_DIGITS: 3,
+    NUM_PREC_RADIX: 10,
+    NULLABLE: 1,
+    REMARKS: null,
+    COLUMN_DEF: null,
+    SQL_DATA_TYPE: 93,
+    SQL_DATETIME_SUB: null,
+    CHAR_OCTET_LENGTH: 0,
+    ORDINAL_POSITION: 2,
+    IS_NULLABLE: 'YES' } ]
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-describe-database ... pubs2
+245
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-describe-table ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-domains-open ... Error caught! { [TypeError: db.disconnect is not a function]
+  domain: 
+   Domain {
+     domain: null,
+     _events: { error: [Function] },
+     _eventsCount: 1,
+     _maxListeners: undefined,
+     members: [] },
+  domainThrown: true }
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-global-open-close ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-instantiate-one-and-end ... done
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-issue-54 ... Connected
+q1 result:  { [Error: [SAP][ASE ODBC Driver][Adaptive Server Enterprise]Incorrect syntax near the keyword 'table'.
+]
+  errors: 
+   [ { message: '[SAP][ASE ODBC Driver][Adaptive Server Enterprise]Incorrect syntax near the keyword \'table\'.\n',
+       state: 'ZZZZZ' },
+     { message: '[SAP][ASE ODBC Driver][Adaptive Server Enterprise]Incorrect syntax near \'(\'.\n',
+       state: '42000' } ],
+  error: '[node-odbc] SQL_ERROR',
+  message: '[SAP][ASE ODBC Driver][Adaptive Server Enterprise]Incorrect syntax near the keyword \'table\'.\n',
+  state: 'ZZZZZ' } [] false
+Running second query
+q2 result:  null [ { x: 1 } ] false
+Closed
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-issue-85 ... [ { test: -1, test2: -2147483648, test3: 2147483647 } ]
+Closed
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-issue-get-column-value-2 ... Count 0, time Mon Jun 05 2017 13:44:52 GMT+0800 (Malay Peninsula Standard Time)
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-memory-leaks-new-objects ... 427576
+145632
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-multi-open-close ... Done
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-multi-open-query-close ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-open-close ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-open-connectTimeout ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-open-dont-close ... undefined
+true
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-open-loginTimeout ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-openSync ... Attempting to connect to: DSN=SPORT;UID=sa;PWD=secret;DATABASE=pubs2
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-param-select-with-booleans-only ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-param-select-with-decimals-only ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-param-select-with-null ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-param-select-with-nulls-mixed ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-param-select-with-numbers-mixed ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-param-select-with-strings-only ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-param-select-with-unicode ... [ { UNICODETEXT: 'ף צ ץ ק ר ש תכ ך ל מ ם נ ן ס ע פ 電电電買买買開开開東东東車车車' } ]
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepare-bind-execute-error ... connection closed
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepare-bind-execute-long-string ... connection closed
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepare-bind-executeNonQuery ... 1000 queries issued in 0.28 seconds, 3571/sec : Prepare - Bind - ExecuteNonQuery 
+connection closed
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepare-bindSync-execute-closeSync ... 50 queries issued in 0.027 seconds, 1851/sec : Prepare - Bind - Execute - Close
+connection closed
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepare ... [ { col1: 'hello world' } ]
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepareSync-bad-sql ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepareSync-multiple-execution ... 1
+count 1, iterations 10
+if
+2
+count 2, iterations 10
+if
+3
+count 3, iterations 10
+if
+4
+count 4, iterations 10
+if
+5
+count 5, iterations 10
+if
+6
+count 6, iterations 10
+if
+7
+count 7, iterations 10
+if
+8
+count 8, iterations 10
+if
+9
+count 9, iterations 10
+if
+10
+count 10, iterations 10
+if
+11
+count 11, iterations 10
+else
+[ { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' },
+  { COLINT: 4, COLDATETIME: null, COLTEXT: 'hello world' } ]
+finish exit value: 0
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-prepareSync ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-create-table-fetchSync ... { '0': null, '1': [], '2': false }
+[TypeError: result.fetchAll is not a function]
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-create-table ... connected
+{ '0': 
+   { [Error: [SAP][ASE ODBC Driver][Adaptive Server Enterprise]There is already an object named 'NODE_ODBC_TEST_TABLE' in the database.
+   ]
+     errors: [ [Object] ],
+     error: '[node-odbc] SQL_ERROR',
+     message: '[SAP][ASE ODBC Driver][Adaptive Server Enterprise]There is already an object named \'NODE_ODBC_TEST_TABLE\' in the database.\n',
+     state: 'ZZZZZ' },
+  '1': [],
+  '2': false }
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-drop-table ... connected
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-insert ... null
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-select-fetch ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-select-fetchAll ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-select-fetchMode-array ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-select-unicode ... connected
+[ { UNICODETEXT: '☯ąčęėįšųūž☎áäàéêèóöòüßÄÖÜ€ шчябы Ⅲ ❤' } ]
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-query-select ... connected
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-querySync-select-with-execption ... 
+Error:Error: [SAP][ASE ODBC Driver][Adaptive Server Enterprise]Invalid column name 'invalid'.
+
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-require-and-end ... done
+[01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-transaction-commit-sync ... [01;32msuccess [01;0m 
+Running test for [[01;29mAdaptive Sever Enterprise[01;0m] : test-transaction-commit ... [01;32msuccess [01;0m 
+
+Results : 3 of 55 tests failed.
+
+
+C:\master\asedrv\src\nodejs\node-odbc\test>echo 3 
+3

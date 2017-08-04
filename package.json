@@ -1,0 +1,45 @@
+{
+  "name": "sapase",
+  "description": "ASE ODBC bindings for node",
+  "version": "1.0.2-beta.1",
+  "main": "lib/odbc.js",
+  "homepage": "https://github.com/SAP/node-sapase#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SAP/node-sapase#readme"
+  },
+  "bugs": {
+    "url": "https://github.com/SAP/node-sapase/issues"
+  },
+  "contributors": [
+    {
+      "name": "Upasana Gaikwad",
+      "email": "upasana.gaikwad@sap.com"
+    },
+    {
+      "name": "Lee Meng Teck",
+      "email": "meng.teck.lee@sap.com"
+    }
+  ],
+  "directories": {
+    "lib": "."
+  },
+  "binary": {
+    "module_name": "odbc_bindings",
+    "module_path": "./build/",
+    "host": "https://d1hbbwv4aleo9o.cloudfront.net/rel102/",
+    "remote_path": ".",
+    "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
+  },
+  "engines": {
+    "node": ">=5.5.0"
+  },
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
+    "test": "cd test && node run-tests.js"
+  },
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^2.0.9"
+  }
+}
