@@ -1,27 +1,27 @@
-#node-sapase
+# node-sapase
 An asynchronous interface for Node.js for SAP Adaptive Server Enterprise using ODBC driver.
 
-##Requirements
+## Requirements
 * Linux or Windows platform.
 * SAP Adaptive Server Enterprise ODBC Driver 16.0 SP03.
 * Properly configured odbc.ini.
 * This Node.js driver communicates with the SAP Adaptive Server Enterprise ODBC driver, which will be installed using [`node-pre-gyp`](https://github.com/mapbox/node-pre-gyp). If the installation of the shared dynamic library were unsuccessful, it would failback to using native compilation managed by [`node-gyp`](https://github.com/nodejs/node-gyp).
 * Node.js versions supported: 6.11.1 and 5.0.0
 
-##Install
+## Install
 You can install an asynchronous interface for Node.js to ODBC by using one of the following two options:
 
-###git
+### git
 ```bash
 git clone https://github.com/SAP/node-sapase.git
 cd sapase
 node-pre-gyp install --fallback-to-build
 ```
-###npm
+### npm
 ```bash
 npm install sapase
 ```
-##Getting Started
+## Getting Started
 
 ```javascript
 var db = require('sapase')()
@@ -43,10 +43,10 @@ db.connect(cn, function (err) {
 });
 ```
 
-##Configuration
+## Configuration
 For configuration of ODBC driver, please refer to [SAP Adaptive Server Enterprise ODBC driver](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc20116.1570100/doc/pdf/aseodbc.pdf)
 
-##Establish a database connection
+## Establish a database connection
 The first step to establing a database connection is to create an instance of the `Database` class. You may get an instance in one of the following ways:
 
 ```javascript
@@ -68,7 +68,7 @@ var Database = require("sapase").Database
   , db = new Database();
 ```
 
-###Connecting
+### Connecting
 Open a connection to a database by calling the connect method of the Database object, and passing a connection string representing the connection parameters.
 
 
@@ -86,7 +86,7 @@ db.connect(cn, function (err) {
 });
 ```
 
-####Disconnecting
+#### Disconnecting
 
 ```javascript
 var db = require("sapase")()
@@ -135,7 +135,7 @@ db.connect(cn, function (err) {
 });
 ```
 
-##Prepared Statement Execution
+## Prepared Statement Execution
 The connection returns a `statement` object which can be executed multiple times.
 ```javascript
 var db = require("sapase")()
@@ -163,10 +163,10 @@ db.connect(cn, function (err) {
 });
 ```
 
-##Transaction Handling
+## Transaction Handling
 __Transactions are  not automatically commited.__ Executing a statement implicitly starts a new transaction that must be explicitly committed, or rolled back.
 
-###Commit a Transaction
+### Commit a Transaction
 ```javascript
 var db = require("sapase")()
   , cn = "DRIVER=Adaptive Server Enterprise;SERVER=host;Port=port;UID=user;PWD=password;DATABASE=dbname"
@@ -214,7 +214,7 @@ db.connect(cn, function (err) {
 });
 ```
 
-###Rollback a Transaction
+### Rollback a Transaction
 ```javascript
 var db = require("sapase")()
   , cn = "DRIVER=Adaptive Server Enterprise;SERVER=host;Port=port;UID=user;PWD=password;DATABASE=dbname"
@@ -260,7 +260,7 @@ db.connect(cn, function (err) {
 });
 ```
 
-##Example
+## Example
 
 ```javascript
 var odbc = require("sapase")
@@ -281,15 +281,15 @@ db.connect(connectionString, function(err) {
 });
 ```
 
-##Testing
+## Testing
 
 Tests can be run by executing `npm test` from within the root of the sapase directory. You can also run the tests by executing `node run-tests.js` from within the `/test` directory.
 
 By default, the tests are setup to run against the pubs2 database using datasource name (DSN) sampledsn. The `/build` directory where the ODBC driver for SAP Adaptive Server Enterprise has been installed must be included in your library path (for Linux) or system path (Windows).
 
-##Build options
+## Build options
 
-###Debugging
+### Debugging
 
 To display the debugging messages, add the `DEBUG` flag to the defines section of the `binding.gyp` file and then execute
 `node-gyp rebuild`.
@@ -302,9 +302,9 @@ To display the debugging messages, add the `DEBUG` flag to the defines section o
 <snip>
 ```
 
-##Resources
+## Resources
 + [SAP Adaptive Server Enterprise ODBC driver](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc20116.1570100/doc/pdf/aseodbc.pdf)
 
-##License
+## License
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
 This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the LICENSE file (https://github.com/SAP/node-sapase.git/LICENSE)
