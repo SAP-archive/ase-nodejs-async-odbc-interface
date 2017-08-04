@@ -13,7 +13,7 @@ You can install an asynchronous interface for Node.js to ODBC by using one of th
 
 ### git
 ```bash
-git clone https://github.com/SAP/node-sapase.git
+git clone https://github.com/SAP/ase-nodejs-async-odbc-interface
 cd sapase
 node-pre-gyp install --fallback-to-build
 ```
@@ -307,4 +307,4 @@ To display the debugging messages, add the `DEBUG` flag to the defines section o
 
 ## License
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
-This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the LICENSE file (https://github.com/SAP/node-sapase.git/LICENSE)
+This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the LICENSE file (https://github.com/SAP/ase-nodejs-async-odbc-interface/LICENSE)
