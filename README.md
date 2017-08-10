@@ -305,6 +305,17 @@ To display the debugging messages, add the `DEBUG` flag to the defines section o
 ## Resources
 + [SAP Adaptive Server Enterprise ODBC driver](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc20116.1570100/doc/pdf/aseodbc.pdf)
 
+## How to obtain support
+Get support for SAP products
+
+If your organization has purchased a support contract for this product, then one or more of your colleagues is designated as an authorized support contact. If you have any questions, or if you need assistance during the installation process, ask a designated person to contact Technical Support as specified in your contract:
+* Sybase Technical Support or the Sybase subsidiary in your area
+* SAP Technical Support
+
+Customers with an SAP support contract can obtain support for this product at the SAP support site, http://service.sap.com/sybase/support. You can also find information about Sybase support migration at this location (login may be required).
+
+Customers with a Sybase support contract can obtain support for this product at http://www.sybase.com/support (login required).
+
 ## License
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
 This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the LICENSE file (https://github.com/SAP/ase-nodejs-async-odbc-interface/LICENSE)
