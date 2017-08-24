@@ -6,7 +6,7 @@ An asynchronous interface for Node.js for SAP Adaptive Server Enterprise using O
 * SAP Adaptive Server Enterprise ODBC Driver 16.0 SP03.
 * Properly configured odbc.ini.
 * This Node.js driver communicates with the SAP Adaptive Server Enterprise ODBC driver, which will be installed using [`node-pre-gyp`](https://github.com/mapbox/node-pre-gyp). If the installation of the shared dynamic library were unsuccessful, it would failback to using native compilation managed by [`node-gyp`](https://github.com/nodejs/node-gyp).
-* Node.js versions supported: 6.11.1 and 5.0.0
+* Node.js versions supported: 6.11.1 and 5.5.0
 
 ## Install
 You can install an asynchronous interface for Node.js to ODBC by using one of the following two options:
@@ -308,13 +308,12 @@ To display the debugging messages, add the `DEBUG` flag to the defines section o
 ## How to obtain support
 Get support for SAP products
 
-If your organization has purchased a support contract for this product, then one or more of your colleagues is designated as an authorized support contact. If you have any questions, or if you need assistance during the installation process, ask a designated person to contact Technical Support as specified in your contract:
-* Sybase Technical Support or the Sybase subsidiary in your area
-* SAP Technical Support
+This software is provided AS-IS, and no additional free support is provided.
 
-Customers with an SAP support contract can obtain support for this product at the SAP support site, http://service.sap.com/sybase/support. You can also find information about Sybase support migration at this location (login may be required).
+Alternatively, if your organization has purchased a support contract for SAP Adaptive Server Enterprise for which this product is used with, then one or more of your colleagues is designated as an authorized support contact. If you have any questions, or if you need assistance, ask a designated person to contact SAP Support as specified in your contract.
 
-Customers with a Sybase support contract can obtain support for this product at http://www.sybase.com/support (login required).
+## Attribution
+This software is modified from open source node-odbc module https://www.npmjs.com/package/odbc
 
 ## License
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
