@@ -3,7 +3,7 @@
  *
  */
 
-var odbc = require("../lib/odbc.js"),
+var odbc = require("sapase"),
       db = new odbc.Database();
 
 
