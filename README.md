@@ -9,16 +9,7 @@ An asynchronous interface for Node.js for SAP Adaptive Server Enterprise using O
 * Node.js versions supported: 6.11.1 and 5.5.0
 
 ## Install
-You can install an asynchronous interface for Node.js to ODBC by using one of the following two options:
-
-### git
-```bash
-git clone https://github.com/SAP/ase-nodejs-async-odbc-interface
-cd sapase
-node-pre-gyp install --fallback-to-build
 ```
-### npm
-```bash
 npm install sapase
 ```
 ## Getting Started
@@ -317,4 +308,4 @@ This software is modified from open source node-odbc module https://www.npmjs.co
 
 ## License
 Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
-This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the LICENSE file (https://github.com/SAP/ase-nodejs-async-odbc-interface/LICENSE)
+This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [`LICENSE`](https://github.com/SAP/ase-nodejs-async-odbc-interface/blob/master/LICENSE) file
