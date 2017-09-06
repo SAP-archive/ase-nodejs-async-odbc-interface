@@ -1,18 +1,19 @@
 # node-sapase
-An asynchronous interface for Node.js for SAP Adaptive Server Enterprise using ODBC driver.
+An asynchronous interface for Node.js to connect to SAP Adaptive Server Enterprise using ODBC driver.
 
 ## Requirements
 * Linux or Windows platform.
 * SAP Adaptive Server Enterprise ODBC Driver 16.0 SP03.
 * Properly configured odbc.ini.
-* This Node.js driver communicates with the SAP Adaptive Server Enterprise ODBC driver, which will be installed using [`node-pre-gyp`](https://github.com/mapbox/node-pre-gyp). If the installation of the shared dynamic library were unsuccessful, it would failback to using native compilation managed by [`node-gyp`](https://github.com/nodejs/node-gyp).
-* Node.js versions supported: 6.11.1 and 5.5.0
+* The Node.js driver which communicates with SAP Adaptive Server Enterprise ODBC driver is installed with [`node-pre-gyp`](https://github.com/mapbox/node-pre-gyp). If the installation of the shared dynamic library failed, it will use the native compilation managed by [`node-gyp`](https://github.com/nodejs/node-gyp).
+* Node.js 6.11.1 or 5.5.0
 
 ## Install
 ```
 npm install sapase
 ```
 ## Getting Started
+Running the following example allows you to quickly start using the Node.js driver:
 
 ```javascript
 var db = require('sapase')()
@@ -35,10 +36,15 @@ db.connect(cn, function (err) {
 ```
 
 ## Configuration
-For configuration of ODBC driver, please refer to [SAP Adaptive Server Enterprise ODBC driver](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc20116.1570100/doc/pdf/aseodbc.pdf)
+For configuration of the ODBC driver, refer to [SAP Adaptive Server Enterprise ODBC driver](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc20116.1570100/doc/pdf/aseodbc.pdf)
 
 ## Establish a database connection
-The first step to establing a database connection is to create an instance of the `Database` class. You may get an instance in one of the following ways:
+To establish a database connection, create an instance of the `Database` class then open a connection to a database.
+
+### Create instances
+There are various methods to create instances for the `Database` class:
+
+Create an instance directly:
 
 ```javascript
 require("sapase").connect(connectionString, function (err, db){
@@ -46,21 +52,21 @@ require("sapase").connect(connectionString, function (err, db){
 });
 ```
 
-or by using the helper function:
+Create an instance by using the helper function:
 
 ```javascript
 var db = require("sapase")();
 ```
 
-or by creating an instance with the constructor function:
+Creating an instance with the constructor function:
 
 ```javascript
 var Database = require("sapase").Database
   , db = new Database();
 ```
 
-### Connecting
-Open a connection to a database by calling the connect method of the Database object, and passing a connection string representing the connection parameters.
+### Connect
+Open a connection to a database by calling the connect method of the `Database` object, and passing a connection string representing the connection parameters.
 
 
 ```javascript
@@ -77,7 +83,8 @@ db.connect(cn, function (err) {
 });
 ```
 
-#### Disconnecting
+### Disconnect
+Close the connection from Node.js to the connected database in SAP Adaptive Server Enterprise by using the `disconnect` function.
 
 ```javascript
 var db = require("sapase")()
@@ -98,11 +105,11 @@ db.connect(cn, function (err) {
 ```
 
 ## Direct Statement Execution
-Direct statement execution is the simplest way to execute SQL statements. The only required input parameter is the SQL command to be executed. The result will be returned via callbacks. The type of returned result depends on the kind of statement.
+Direct statement execution is the simplest way to execute SQL statements. The only required input parameter is the SQL command to be executed. The result is returned using callbacks. The type of returned result depends on the kind of statement.
 
-### Query
+### Execute Query
 
-The `exec` function is a convenient way to completely retrieve the result of a query. In this case all selected rows are fetched and returned in the callback.
+The `exec` function is a convenient way to retrieve the full result of a query. In this case, all selected rows are fetched and returned in the callback.
 
 ```javascript
 var db = require("sapase")()
@@ -115,7 +122,7 @@ db.connect(cn, function (err) {
 	}
 
 	//we now have an open connection to the database
-	//so lets get some data
+	//let's get some data
 	db.exec("select top 10 * from customers", function (err, rows) {
 		if (err) {
 			return console.log(err);
@@ -127,7 +134,7 @@ db.connect(cn, function (err) {
 ```
 
 ## Prepared Statement Execution
-The connection returns a `statement` object which can be executed multiple times.
+The process of executing a prepared statement requires you to first prepare the statement, before executing it. When preparing a statement, the connection returns a `statement` object which can be executed multiple times. The execution of a prepared statement is similar to that of direct statement execution.
 ```javascript
 var db = require("sapase")()
   , cn = "DRIVER=Adaptive Server Enterprise;SERVER=host;Port=port;UID=user;PWD=password;DATABASE=dbname"
@@ -155,9 +162,9 @@ db.connect(cn, function (err) {
 ```
 
 ## Transaction Handling
-__Transactions are  not automatically commited.__ Executing a statement implicitly starts a new transaction that must be explicitly committed, or rolled back.
+You can begin, commit, and rollback a transaction in the SAP Adaptive Server Enterprise database using Node.js via the Node.js driver. __Transactions are  not automatically committed.__ Executing a statement starts a new transaction that must be explicitly committed, or rolled back.
 
-### Commit a Transaction
+### Begin and Commit a Transaction
 ```javascript
 var db = require("sapase")()
   , cn = "DRIVER=Adaptive Server Enterprise;SERVER=host;Port=port;UID=user;PWD=password;DATABASE=dbname"
@@ -274,15 +281,15 @@ db.connect(connectionString, function(err) {
 
 ## Testing
 
-Tests can be run by executing `npm test` from within the root of the sapase directory. You can also run the tests by executing `node run-tests.js` from within the `/test` directory.
+You can run the tests by executing `npm test` from within the root of the `sapase` directory or by executing `node run-tests.js` from within the `/test` directory.
 
-By default, the tests are setup to run against the pubs2 database using datasource name (DSN) sampledsn. The `/build` directory where the ODBC driver for SAP Adaptive Server Enterprise has been installed must be included in your library path (for Linux) or system path (Windows).
+By default, the tests are setup to run against the pubs2 database using datasource name (DSN) sampledsn. The `/build` directory where the ODBC driver for SAP Adaptive Server Enterprise is installed must be included in your library path (for Linux) or system path (Windows).
 
-## Build options
+## Build Options
 
 ### Debugging
 
-To display the debugging messages, add the `DEBUG` flag to the defines section of the `binding.gyp` file and then execute
+To display debugging messages, add the `DEBUG` flag to the defines section of the `binding.gyp` file, then execute
 `node-gyp rebuild`.
 
 ```javascript
