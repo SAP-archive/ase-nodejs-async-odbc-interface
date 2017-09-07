@@ -1,7 +1,7 @@
 {
   "name": "sapase",
   "description": "ASE ODBC bindings for node",
-  "version": "1.0.2-beta.1",
+  "version": "1.0.2",
   "main": "lib/odbc.js",
   "homepage": "https://github.com/SAP/ase-nodejs-async-odbc-interface#readme",
   "repository": {

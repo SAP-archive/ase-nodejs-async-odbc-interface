@@ -6,7 +6,7 @@ An asynchronous interface for Node.js to connect to SAP Adaptive Server Enterpri
 * SAP Adaptive Server Enterprise ODBC Driver 16.0 SP03.
 * Properly configured odbc.ini.
 * The Node.js driver which communicates with SAP Adaptive Server Enterprise ODBC driver is installed with [`node-pre-gyp`](https://github.com/mapbox/node-pre-gyp). If the installation of the shared dynamic library failed, it will use the native compilation managed by [`node-gyp`](https://github.com/nodejs/node-gyp).
-* Node.js 6.11.1 or 5.5.0
+* Node.js 6.11.1 or 5.5.0.
 
 ## Install
 ```
@@ -38,10 +38,10 @@ db.connect(cn, function (err) {
 ## Configuration
 For configuration of the ODBC driver, refer to [SAP Adaptive Server Enterprise ODBC driver](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc20116.1570100/doc/pdf/aseodbc.pdf)
 
-## Establish a database connection
+## Establish a Database Connection
 To establish a database connection, create an instance of the `Database` class then open a connection to a database.
 
-### Create instances
+### Create Instances
 There are various methods to create instances for the `Database` class:
 
 Create an instance directly:
@@ -52,7 +52,7 @@ require("sapase").connect(connectionString, function (err, db){
 });
 ```
 
-Create an instance by using the helper function:
+Creating an instance by using the helper function:
 
 ```javascript
 var db = require("sapase")();
@@ -303,7 +303,7 @@ To display debugging messages, add the `DEBUG` flag to the defines section of th
 ## Resources
 + [SAP Adaptive Server Enterprise ODBC driver](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc20116.1570100/doc/pdf/aseodbc.pdf)
 
-## How to obtain support
+## How to Obtain Support
 Get support for SAP products
 
 This software is provided AS-IS, and no additional free support is provided.
