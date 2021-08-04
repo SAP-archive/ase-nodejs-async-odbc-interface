@@ -1,3 +1,8 @@
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+# Important Notice
+This public repository is read-only and no longer maintained.
+
 # node-sapase
 An asynchronous interface for Node.js to connect to SAP Adaptive Server Enterprise using ODBC driver.
 
